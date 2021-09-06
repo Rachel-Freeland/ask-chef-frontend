@@ -135,7 +135,7 @@ Slack message, Remo, Merge party
 
 ## Domain Modeling
 
-![Data Modeling](Domain Model Ask Chef.jpg)
+![Data Modeling](domain-model.jpg)
 
 ## Software Requirements
 
