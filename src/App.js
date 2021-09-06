@@ -1,9 +1,5 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import About from './Components/About';
@@ -11,7 +7,7 @@ import Profile from './Components/Profile';
 import { Component } from 'react';
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div className="App">
         <Router>
