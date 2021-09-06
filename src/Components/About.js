@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import antoine from '../img/antoine.jpg';
-import rachel from '../img/rachel.jpg';
+import antoine from '../img/antoine.png';
+import rachel from '../img/rachel.png';
 import patrick from '../img/patrick.png';
-import alex from '../img/alex.jpg';
+import alex from '../img/alex.png';
 import blank from '../img/blank.png';
 import { Container } from 'react-bootstrap';
 
@@ -46,8 +46,7 @@ class About extends Component {
                   therapist with a neonatal/pediatrics specialty certification and recently followed my passion for
                   information and cyber security by entering a Bachelors of Applied Science in IT Network Administration
                   and Security program, where I graduated in June 2020. I am currently rounding out my future career by
-                  becoming a full-stack Java developer. I plan to combine these 2 fields if possible in a career either
-                  securing the IOT or SecDevOps or possibly writing software for a medical company.
+                  becoming a full-stack Java developer.
                 </p>
                 <a className="about" href="https://www.linkedin.com/in/rachel-freeland/">
                   LinkedIn

@@ -1,24 +1,34 @@
 .App {
   text-align: center;
 }
+* {
+  background-color: rgb(176, 183. 191);
+}
 
 body {
-  background-size: cover;
+  background-color: rgb(176, 183, 191);
   background-image: url('./img/home-background.jpg');
+  background-size: cover;
   height: 100%;
-  padding-right: 1rem;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 img.about {
   border-radius: 50%;
+  float: left;
+  height: 25vh;
+  margin-bottom: 1.125rem;
+  margin-right: 0.5rem;
+  padding-right: 0.3rem;
+  width: 12vw;
 }
 
 a.about {
+  color: rgb(102, 120, 96);
+  font-size: 1.4rem;
   margin-left: 2rem;
   margin-right: 2rem;
-  color: green;
-  font-size: 1.25rem;
   text-decoration: none;
 }
 
@@ -27,8 +37,13 @@ h3 {
 }
 
 p {
+  clear: right;
   color: black;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  margin-left: 0.25rem;
+  padding-left: 0.25rem;
+  text-align: justify;
+  
 }
 
 #carousel-container {
