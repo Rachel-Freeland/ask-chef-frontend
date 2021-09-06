@@ -4,6 +4,7 @@ import antoine from '../img/antoine.jpg';
 import rachel from '../img/rachel.jpg';
 import patrick from '../img/patrick.png';
 import alex from '../img/alex.jpg';
+import blank from '../img/blank.png';
 import { Container } from 'react-bootstrap';
 
 class About extends Component {
@@ -12,7 +13,7 @@ class About extends Component {
       <Container style={{ maxWidth: '35vw' }}>
         <Carousel fade>
           <Carousel.Item>
-            <img className="d-block w-100" src={antoine} alt="antoine" />
+            <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
               <h3>Antoine Charette</h3>
               <p></p>
@@ -21,7 +22,7 @@ class About extends Component {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src={rachel} alt="antoine" />
+            <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
               <h3>Rachel Freeland</h3>
               <p>
@@ -38,7 +39,7 @@ class About extends Component {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src={patrick} alt="antoine" />
+            <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
               <h3>Patrick Laurion</h3>
               <p></p>
@@ -47,7 +48,7 @@ class About extends Component {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src={alex} alt="antoine" />
+            <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
               <h3>Alexander Beers</h3>
               <p>
