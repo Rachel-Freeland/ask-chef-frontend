@@ -10,6 +10,28 @@ body {
   padding-left: 1rem;
 }
 
-img {
+img.about {
   border-radius: 50%;
+}
+
+a.about {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: green;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+h3 {
+  color: black;
+}
+
+p {
+  color: black;
+  font-size: 1.25rem;
+}
+
+#carousel-container {
+  max-height: '50vw';
+  margin-top: 22vh;
 }

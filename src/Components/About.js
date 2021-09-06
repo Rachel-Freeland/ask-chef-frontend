@@ -10,53 +10,98 @@ import { Container } from 'react-bootstrap';
 class About extends Component {
   render() {
     return (
-      <Container style={{ maxWidth: '35vw' }}>
-        <Carousel fade>
+      <Container id="carousel-container">
+        <Carousel>
           <Carousel.Item>
             <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
+              <img className="about" src={antoine} alt="antoine" />
               <h3>Antoine Charette</h3>
-              <p></p>
-              <p>LinkedIn: https://www.linkedin.com/in/antoinecharette/</p>
-              <p>GitHub: https://github.com/DevAOC</p>
+              <article>
+                <p>
+                  I am an ex-chef transitioning into the tech industry. Ultimately, it was a combination of my interest
+                  in computers and coronavirus lockdowns that made me change careers. I would love to work for a company
+                  that fulfills my need to produce tech that will positively impact peoples’ lives. I can bring my
+                  previous experience, and skills in organization, time management, customer obsession, and detail
+                  orientation to make this dream a reality.
+                </p>
+                <a className="about" href="https://www.linkedin.com/in/antoinecharette/">
+                  LinkedIn
+                </a>
+                <a className="about" href="https://github.com/DevAOC">
+                  GitHub
+                </a>
+              </article>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
+              <img className="about" src={rachel} alt="rachel" />
               <h3>Rachel Freeland</h3>
-              <p>
-                I am an analytical, solution oriented and, innovative professional with 15+ years of diverse experience
-                in fast-paced operational environments. I have a background as a registered respiratory therapist with a
-                neonatal/pediatrics specialty certification and recently followed my passion for information and cyber
-                security by entering a Bachelors of Applied Science in IT Network Administration and Security program,
-                where I graduated in June 2020. I am currently rounding out my future career by becoming a full-stack
-                Java developer. I plan to combine these 2 fields if possible in a career either securing the IOT or
-                SecDevOps or possibly writing software for a medical company.
-              </p>
-              <p>LinkedIn: https://www.linkedin.com/in/rachel-freeland/</p>
-              <p>GitHub: https://github.com/Rachel-Freeland</p>
+              <article>
+                <p>
+                  I am an analytical, solution oriented and, innovative professional with 15+ years of diverse
+                  experience in fast-paced operational environments. I have a background as a registered respiratory
+                  therapist with a neonatal/pediatrics specialty certification and recently followed my passion for
+                  information and cyber security by entering a Bachelors of Applied Science in IT Network Administration
+                  and Security program, where I graduated in June 2020. I am currently rounding out my future career by
+                  becoming a full-stack Java developer. I plan to combine these 2 fields if possible in a career either
+                  securing the IOT or SecDevOps or possibly writing software for a medical company.
+                </p>
+                <a className="about" href="https://www.linkedin.com/in/rachel-freeland/">
+                  LinkedIn
+                </a>
+                <a className="about" href="https://github.com/Rachel-Freeland">
+                  GitHub
+                </a>
+              </article>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
+              <img className="about" src={patrick} alt="patrick" />
               <h3>Patrick Laurion</h3>
-              <p></p>
-              <p>LinkedIn: https://www.linkedin.com/in/patricklaurion1989/</p>
-              <p>GitHub: </p>
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue condimentum nulla sed dapibus. Sed
+                  tempor molestie velit, vitae fringilla enim elementum vel. Aliquam a mollis turpis, a iaculis odio.
+                  Morbi tempus semper purus, non blandit nunc facilisis in. Duis a felis tellus. In eget posuere risus.
+                  Phasellus sollicitudin ut leo in eleifend. Etiam nibh diam, semper nec risus at, ornare dapibus felis.
+                  Cras sapien velit, convallis in porttitor vel, consequat in est. Pellentesque est nisl, eleifend id
+                  justo non, ornare pulvinar massa. Fusce molestie eu elit eu lobortis.
+                </p>
+                <a className="about" href="https://www.linkedin.com/in/patricklaurion1989/">
+                  LinkedIn
+                </a>
+                <a className="about" href="https://github.com/plaurion1989">
+                  GitHub
+                </a>
+              </article>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={blank} alt="carousel-backing" />
             <Carousel.Caption>
+              <img className="about" src={alex} alt="alex" />
               <h3>Alexander Beers</h3>
-              <p>
-                I am a software developer from the San Francisco bay area. In my free time I enjoy fine dining, gaming,
-                and keeping up with bay area sports teams.
-              </p>
-              <p>LinkedIn: https://www.linkedin.com/in/alexander-r-beers/</p>
-              <p>GitHub: https://github.com/Beers15</p>
+              <article>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue condimentum nulla sed dapibus. Sed
+                  tempor molestie velit, vitae fringilla enim elementum vel. Aliquam a mollis turpis, a iaculis odio.
+                  Morbi tempus semper purus, non blandit nunc facilisis in. Duis a felis tellus. In eget posuere risus.
+                  Phasellus sollicitudin ut leo in eleifend. Etiam nibh diam, semper nec risus at, ornare dapibus felis.
+                  Cras sapien velit, convallis in porttitor vel, consequat in est. Pellentesque est nisl, eleifend id
+                  justo non, ornare pulvinar massa. Fusce molestie eu elit eu lobortis.
+                </p>
+                <a className="about" href="https://www.linkedin.com/in/alexander-r-beers/">
+                  LinkedIn
+                </a>
+                <a className="about" href="https://github.com/Beers15">
+                  GitHub
+                </a>
+              </article>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
