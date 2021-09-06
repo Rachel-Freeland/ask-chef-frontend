@@ -131,11 +131,11 @@ Slack message, Remo, Merge party
 
 ## Data Schema
 
-![Data Schema](./img/Data-schema.png)
+![Data Schema](./src/img/Data-schema.png)
 
 ## Domain Modeling
 
-![Data Modeling](./img/domain-model.jpg)
+![Data Modeling](./src/img/domain-model.jpg)
 
 ## Software Requirements
 
