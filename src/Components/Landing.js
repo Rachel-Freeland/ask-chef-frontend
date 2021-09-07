@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import LandingCarousel from './LandingCarousel';
 import MissionStatement from './MissionStatement';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 import axios from 'axios';
 
@@ -12,19 +14,24 @@ export default class Landing extends Component {
     };
   }
 
-  render() {
-    const componentDidMount = async () => {
-      if (this.state.landingRecipes.length === 0) {
-        const landingRecipes = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/recipes/random`);
-        this.setState({ landingRecipes });
-      }
-    };
+  componentDidMount = async () => {
+    if (this.state.landingRecipes.length === 0) {
+      const results = await axios.get(
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}&number=5`
+      );
+      const landingRecipes = results.data.recipes;
+      this.setState({ landingRecipes });
+    }
+  };
 
+  render() {
     return (
-      <>
-        <MissionStatement />
-        <LandingCarousel landingRecipes={this.state.landingRecipes} />
-      </>
+      <Container id="landing-container">
+        <Row>
+          <MissionStatement />
+          <LandingCarousel landingRecipes={this.state.landingRecipes} />
+        </Row>
+      </Container>
     );
   }
 }
