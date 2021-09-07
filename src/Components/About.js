@@ -5,9 +5,9 @@ import rachel from '../img/rachel.png';
 import patrick from '../img/patrick.png';
 import alex from '../img/alex.png';
 import blank from '../img/blank.png';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
-class About extends Component {
+export default class About extends Component {
   render() {
     return (
       <Container id="carousel-container">
@@ -108,5 +108,3 @@ class About extends Component {
     );
   }
 }
-
-export default About;
