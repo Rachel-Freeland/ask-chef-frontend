@@ -1,15 +1,26 @@
 import { Component } from 'react';
+import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
-import LandingCarouselItem from './LandingCarouselItem';
 
 export default class LandingCarousel extends Component {
   render() {
     return (
-      <Carousel>
-        {this.props.landingRecipes.map((recipe) => {
-          <LandingCarouselItem recipe={recipe} />;
-        })}
-      </Carousel>
+      <Col className="p-0">
+        <Carousel>
+          {this.props.landingRecipes.map((recipe) => {
+            return (
+              <Carousel.Item>
+                <img id="landing-image" src={recipe.image} alt="recipeImage" />
+                <Carousel.Caption id="landing-carousel-caption">
+                  <h3>{recipe.title}</h3>
+                  <p id="landing-servings">Servings: {recipe.servings}</p>
+                  <p>Preparation Time: {recipe.readyInMinutes} minutes</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
+      </Col>
     );
   }
 }

@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container';
 export default class About extends Component {
   render() {
     return (
-      <Container id="carousel-container">
+      <Container id="about-carousel-container">
         <Carousel>
           <Carousel.Item>
             <img className="d-block w-100" src={blank} alt="carousel-backing" />

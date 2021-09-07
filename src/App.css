@@ -6,9 +6,9 @@
 }
 
 body {
-  background-color: rgb(176, 183, 191);
   background-image: url('./img/home-background.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -44,6 +44,58 @@ p {
   text-align: justify;
 }
 
-#carousel-container {
-  max-height: '50vh';
+#about-carousel-container {
+  margin-top: 20vh;
+  width: 70vw;
+}
+
+#landing-container {
+  margin-top: 20vh;
+  margin-left: 80px;
+}
+
+#mission-col {
+  max-width: 575px;
+}
+
+#mission-card {
+  z-index: 1000 !important;
+  text-align: center;
+  opacity: 0.75;
+  /* max-width: 48ch; */
+  border-radius: 5%;
+  background-color: lightgray;
+  color: black;
+  min-height: 370px;
+}
+
+#mission-card-header {
+  font-size: 2rem;
+}
+
+#mission-card-txt {
+  line-height: 32px;
+  margin-top: 35px;
+  text-indent: 40px;
+}
+
+#landing-carousel-caption > h3 {
+  color: #ffa73c;
+  text-shadow: 2px 2px black;
+  backdrop-filter: blur(3px);
+}
+
+#landing-carousel-caption > p {
+  color: #ffa73c;
+  width: 300px;
+  text-shadow: 2px 2px black;
+  backdrop-filter: blur(3px);
+}
+
+#landing-servings {
+  width: 125px !important;
+}
+
+#landing-image {
+  border-radius: 5%;
 }
