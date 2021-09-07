@@ -2,14 +2,13 @@
   text-align: center;
 }
 * {
-  background-color: rgb(176, 183. 191);
+  background-color: rgb(176, 183 191);
 }
 
 body {
   background-color: rgb(176, 183, 191);
   background-image: url('./img/home-background.jpg');
   background-size: cover;
-  height: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -25,7 +24,7 @@ img.about {
 }
 
 a.about {
-  color: rgb(102, 120, 96);
+  color: #667860;
   font-size: 1.4rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -43,10 +42,8 @@ p {
   margin-left: 0.25rem;
   padding-left: 0.25rem;
   text-align: justify;
-  
 }
 
 #carousel-container {
-  max-height: '50vw';
-  margin-top: 22vh;
+  max-height: '50vh';
 }

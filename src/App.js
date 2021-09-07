@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header';
-import Main from './Components/Main';
+import AskChef from './Components/AskChef';
 import About from './Components/About';
 import Profile from './Components/Profile';
+import Landing from './Components/Landing';
 import { Component } from 'react';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path="/askchef">
-              <Main />
+              <AskChef />
             </Route>
             <Route path="/profile">
               <Profile />
@@ -23,7 +24,7 @@ class App extends Component {
               <About />
             </Route>
             <Route path="/">
-              <h1>Home</h1>
+              <Landing />
             </Route>
           </Switch>
         </Router>
