@@ -6,7 +6,7 @@ export default class LandingCarousel extends Component {
   render() {
     return (
       <Col className="p-0">
-        <Carousel>
+        <Carousel controls={false}>
           {this.props.landingRecipes.map((recipe) => {
             return (
               <Carousel.Item>

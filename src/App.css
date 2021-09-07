@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 * {
   background-color: rgb(176, 183 191);
 }
@@ -11,6 +9,11 @@ body {
   background-repeat: no-repeat;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+#profile-header, #profile-footer {
+  background: rgba(93, 104, 89, .75);
+  color: white;
 }
 
 img.about {
@@ -45,13 +48,12 @@ p {
 }
 
 #about-carousel-container {
-  margin-top: 20vh;
+  margin-top: 10vh;
   width: 70vw;
 }
 
 #landing-container {
   margin-top: 20vh;
-  margin-left: 80px;
 }
 
 #mission-col {
@@ -61,16 +63,16 @@ p {
 #mission-card {
   z-index: 1000 !important;
   text-align: center;
-  opacity: 0.75;
   /* max-width: 48ch; */
   border-radius: 5%;
-  background-color: lightgray;
+  background: rgba(187, 190, 186, .65);
   color: black;
   min-height: 370px;
 }
 
 #mission-card-header {
   font-size: 2rem;
+  opacity: 1 !important;
 }
 
 #mission-card-txt {
@@ -80,6 +82,7 @@ p {
 }
 
 #landing-carousel-caption > h3 {
+  max-width: 20ch;
   color: #ffa73c;
   text-shadow: 2px 2px black;
   backdrop-filter: blur(3px);
@@ -98,4 +101,43 @@ p {
 
 #landing-image {
   border-radius: 5%;
+  /* margin-left: 88px; */
+}
+
+#profile-card {
+  background: rgba(187, 190, 186, .65);
+  color: white;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+#profile-title {
+  font-size: 35px;
+  color: 'white'; 
+}
+
+#recipe-card {
+  background: rgba(93, 104, 89, .75);
+  color: white;
+}
+
+#recipe-card {
+  background: rgba(93, 104, 89, .75);
+  color: white;
+}
+
+#recipe-card-steps {
+  color: white;
+}
+
+.recipe-card-listitem {
+  background: rgba(187, 190, 186, .65) !important;
+  color: white !important;
+}
+
+#recipe-card-title {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
 }
