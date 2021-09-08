@@ -120,6 +120,12 @@ p {
   margin-top: 100px;
 }
 
+#profile-img {
+  border-radius: 50%;
+  padding: 20px;
+  
+}
+
 #profile-title {
   font-size: 35px;
   color: 'white';

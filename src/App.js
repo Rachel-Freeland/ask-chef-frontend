@@ -13,16 +13,13 @@ import IsLoadingAndError from './IsLoadingAndError';
 
 class App extends Component {
   makeRequest = async () => {
-    const { getIdTokenClaims } = this.props.auth0;
-    let tokenClaims = await getIdTokenClaims();
-    const jwt = tokenClaims.__raw;
+    // const { getIdTokenClaims } = this.props.auth0;
+    // let tokenClaims = await getIdTokenClaims();
+    // const jwt = tokenClaims.__raw;
 
-    const config = {
-      headers: { "Authorization": `Bearer ${jwt}` }
-    };
-    const serverResponse = await axios.get('http://localhost:3001/test', config);
-
-    console.log(serverResponse);
+    // const config = {
+    //   headers: { "Authorization": `Bearer ${jwt}` }
+    // };
   }
   render() {
     const { user, isAuthenticated, isLoading } = this.props.auth0;
@@ -33,25 +30,27 @@ class App extends Component {
           <IsLoadingAndError>
             <Header />
             <Switch>
-
               {isAuthenticated &&
                 <>
-                  <Route path="/">
+                  <Route exact path="/">
                     <Landing />
                   </Route>
-                  <Route path="/askchef">
+                  <Route exact path="/askchef">
                     <AskChef />
                   </Route>
-                  <Route path="/profile">
+                  <Route exact path="/profile">
                     <Profile />
                   </Route>
-                  <Route path="/about">
+                  <Route exact path="/about">
                     <About />
                   </Route>
                 </>
               }
-              <Route path="/">
+              <Route exact path="/">
                 <Landing />
+              </Route>
+              <Route exact path="/about">
+                <About />
               </Route>
             </Switch>
           </IsLoadingAndError>

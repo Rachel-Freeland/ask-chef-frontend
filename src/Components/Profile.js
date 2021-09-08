@@ -27,15 +27,15 @@ class Profile extends Component {
   }
 
   async componentDidMount() {
-    let recipeUrl = `${server}/recipes/db`;
-    let config = await this.getConfig();
-    try {
-      const response = await axios.get(recipeUrl, config);
-      this.setState({ recipes: response.data });
-      console.log(response.data);
-    } catch (err) {
-      console.log(err);
-    }
+    // let recipeUrl = `${server}/recipes/db`;
+    // let config = await this.getConfig();
+    // try {
+    //   const response = await axios.get(recipeUrl, config);
+    //   this.setState({ recipes: response.data });
+    //   console.log(response.data);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   }
 
   render() {
