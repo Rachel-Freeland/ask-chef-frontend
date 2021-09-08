@@ -15,12 +15,14 @@ export default class Landing extends Component {
   }
 
   componentDidMount = async () => {
-    if (this.state.landingRecipes.length === 0) {
+    try {
       const results = await axios.get(
         `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}&number=5`
       );
       const landingRecipes = results.data.recipes;
       this.setState({ landingRecipes });
+    } catch(err) {
+      console.log(err);
     }
   };
 

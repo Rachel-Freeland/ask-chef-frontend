@@ -11,7 +11,7 @@ body {
   padding-right: 1rem;
 }
 
-#profile-header, #profile-footer {
+#askchef-footer, #askchef-header, #profile-header, #profile-footer {
   background: rgba(93, 104, 89, .75);
   color: white;
 }
@@ -104,7 +104,7 @@ p {
   /* margin-left: 88px; */
 }
 
-#profile-card {
+#askchef-card, #profile-card {
   background: rgba(187, 190, 186, .65);
   color: white;
   width: 600px;

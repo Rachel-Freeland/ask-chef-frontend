@@ -19,7 +19,7 @@ class Profile extends Component {
           {this.state.recipes.map((recipe, index) => {
             if(index % 3 === 0) {
               return (
-                <RecipeRow key={index} recipes={this.state.recipes.slice(index, index + 3)} />
+                <RecipeRow isProfileCardRow={true} key={index} recipes={this.state.recipes.slice(index, index + 3)} />
               );
             }
             else return null;

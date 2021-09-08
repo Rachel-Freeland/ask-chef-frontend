@@ -9,7 +9,7 @@ export default class LandingCarousel extends Component {
         <Carousel controls={false}>
           {this.props.landingRecipes.map((recipe) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={recipe.id}>
                 <img id="landing-image" src={recipe.image} alt="recipeImage" />
                 <Carousel.Caption id="landing-carousel-caption">
                   <h3>{recipe.title}</h3>
