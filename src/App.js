@@ -7,20 +7,17 @@ import Profile from './Components/Profile';
 import Landing from './Components/Landing';
 import { Component } from 'react';
 import { withAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
 import IsLoadingAndError from './IsLoadingAndError';
-
 
 class App extends Component {
   makeRequest = async () => {
     // const { getIdTokenClaims } = this.props.auth0;
     // let tokenClaims = await getIdTokenClaims();
     // const jwt = tokenClaims.__raw;
-
     // const config = {
     //   headers: { "Authorization": `Bearer ${jwt}` }
     // };
-  }
+  };
   render() {
     const { user, isAuthenticated, isLoading } = this.props.auth0;
     console.log('app', user, isLoading);
@@ -30,7 +27,7 @@ class App extends Component {
           <IsLoadingAndError>
             <Header />
             <Switch>
-              {isAuthenticated &&
+              {isAuthenticated && (
                 <>
                   <Route exact path="/">
                     <Landing />
@@ -45,7 +42,7 @@ class App extends Component {
                     <About />
                   </Route>
                 </>
-              }
+              )}
               <Route exact path="/">
                 <Landing />
               </Route>

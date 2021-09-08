@@ -3,11 +3,33 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import { withAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 
 class RecipeCard extends Component {
-  componentDidMount() {
-    console.log(this.props.recipe, 'IN CARD');
+  constructor(props) {
+    super(props);
+    this.state = { saved: false };
   }
+
+  componentDidMount = async () => {
+    const saveCheck = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/check?id=${this.props.recipe.id}&email=${this.props.auth0.user.email}`
+    );
+    if (saveCheck === true) {
+      this.setState({ saved: true });
+    }
+  };
+
+  // handleSave = async (id) => {
+  //   //Fix this find
+  //   const recipe = this.state.recipes.find((recipe) => id === recipe.id);
+  //   try {
+  //     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/recipes`, recipe);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   render() {
     return (
@@ -45,9 +67,15 @@ class RecipeCard extends Component {
         ) : (
           <Card.Body id="recipe-card-body">
             {/* Add saved check */}
-            <Button className="m-2" variant="success">
-              Save
-            </Button>
+            {this.state.saved ? (
+              <Button className="m-2" disabled>
+                Saved
+              </Button>
+            ) : (
+              <Button className="m-2" variant="success">
+                Save
+              </Button>
+            )}
           </Card.Body>
         )}
       </Card>
@@ -55,4 +83,4 @@ class RecipeCard extends Component {
   }
 }
 
-export default RecipeCard;
+export default withAuth0(RecipeCard);
