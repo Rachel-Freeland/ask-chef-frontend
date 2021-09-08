@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+* {
+  background-color: rgb(176, 183 191);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url('./img/home-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#askchef-footer,
+#askchef-header,
+#profile-header,
+#profile-footer {
+  background: rgba(93, 104, 89, 0.75);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img.about {
+  border-radius: 50%;
+  float: left;
+  height: 25vh;
+  margin-bottom: 1.125rem;
+  margin-right: 0.5rem;
+  padding-right: 0.3rem;
+  width: 12vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a.about {
+  color: #667860;
+  font-size: 1.4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+h3 {
+  color: black;
+}
+
+p {
+  clear: right;
+  color: black;
+  font-size: 1.3rem;
+  margin-left: 0.25rem;
+  padding-left: 0.25rem;
+  text-align: justify;
+}
+
+#about-carousel-container {
+  margin-top: 10vh;
+  width: 70vw;
+}
+
+#landing-container {
+  margin-top: 20vh;
+}
+
+#mission-col {
+  max-width: 575px;
+}
+
+#mission-card {
+  z-index: 1000 !important;
+  text-align: center;
+  /* max-width: 48ch; */
+  border-radius: 5%;
+  background: rgba(187, 190, 186, 0.65);
+  color: black;
+  min-height: 370px;
+}
+
+#mission-card-header {
+  font-size: 2rem;
+  opacity: 1 !important;
+}
+
+#mission-card-txt {
+  line-height: 32px;
+  margin-top: 35px;
+  text-indent: 40px;
+}
+
+#landing-carousel-caption > h3 {
+  max-width: 20ch;
+  color: #ffa73c;
+  text-shadow: 2px 2px black;
+  backdrop-filter: blur(3px);
+}
+
+#landing-carousel-caption > p {
+  color: #ffa73c;
+  width: 300px;
+  text-shadow: 2px 2px black;
+  backdrop-filter: blur(3px);
+}
+
+#landing-servings {
+  width: 125px !important;
+}
+
+#landing-image {
+  border-radius: 5%;
+  /* margin-left: 88px; */
+}
+
+#askchef-card,
+#profile-card {
+  background: rgba(187, 190, 186, 0.65);
+  color: white;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+#profile-title {
+  font-size: 35px;
+  color: 'white';
+}
+
+#recipe-card {
+  background: rgba(93, 104, 89, 0.75);
+  color: white;
+}
+
+#recipe-card-steps {
+  color: white;
+}
+
+.recipe-card-list-item {
+  background: rgba(187, 190, 186, 0.65) !important;
+  color: white !important;
+}
+.recipe-card-list-item > h3 {
+  color: white;
+}
+
+#recipe-card-title {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 700;
 }
