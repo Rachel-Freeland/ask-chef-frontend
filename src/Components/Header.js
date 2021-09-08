@@ -24,12 +24,16 @@ class Header extends Component {
                 Home
               </Link>
             </NavItem>
-            <NavItem>
-              {this.props.auth0.isAuthenticated ? <Link to="/askchef" className="nav-link">Ask Chef</Link> : ''}
-            </NavItem>
-            <NavItem>
-              {this.props.auth0.isAuthenticated ? <Link to="/profile">Profile</Link> : ''}
-            </NavItem>
+            {this.props.auth0.isAuthenticated ?
+              <>
+                <NavItem>
+                  <Link to="/askchef" className="nav-link">Ask Chef</Link>
+                </NavItem>
+                <NavItem>
+                  <Link to="/profile" className="nav-link">Profile</Link>
+                </NavItem>
+              </>
+              : ''}
             <NavItem>
               <Link to="/about" className="nav-link">
                 About

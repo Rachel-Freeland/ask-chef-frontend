@@ -33,17 +33,25 @@ class App extends Component {
           <IsLoadingAndError>
             <Header />
             <Switch>
+
+              {isAuthenticated &&
+                <>
+                  <Route path="/">
+                    <Landing />
+                  </Route>
+                  <Route path="/askchef">
+                    <AskChef />
+                  </Route>
+                  <Route path="/profile">
+                    <Profile />
+                  </Route>
+                  <Route path="/about">
+                    <About />
+                  </Route>
+                </>
+              }
               <Route path="/">
                 <Landing />
-              </Route>
-              <Route path="/askchef">
-                {isAuthenticated ? <AskChef /> : <Landing />}
-              </Route>
-              <Route path="/profile">
-                {isAuthenticated && <Profile />}
-              </Route>
-              <Route path="/about">
-                <About />
               </Route>
             </Switch>
           </IsLoadingAndError>
