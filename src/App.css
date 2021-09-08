@@ -1,4 +1,3 @@
-
 * {
   background-color: rgb(176, 183 191);
 }
@@ -11,8 +10,11 @@ body {
   padding-right: 1rem;
 }
 
-#askchef-footer, #askchef-header, #profile-header, #profile-footer {
-  background: rgba(93, 104, 89, .75);
+#askchef-footer,
+#askchef-header,
+#profile-header,
+#profile-footer {
+  background: rgba(93, 104, 89, 0.75);
   color: white;
 }
 
@@ -65,7 +67,7 @@ p {
   text-align: center;
   /* max-width: 48ch; */
   border-radius: 5%;
-  background: rgba(187, 190, 186, .65);
+  background: rgba(187, 190, 186, 0.65);
   color: black;
   min-height: 370px;
 }
@@ -104,8 +106,9 @@ p {
   /* margin-left: 88px; */
 }
 
-#askchef-card, #profile-card {
-  background: rgba(187, 190, 186, .65);
+#askchef-card,
+#profile-card {
+  background: rgba(187, 190, 186, 0.65);
   color: white;
   width: 600px;
   margin: auto;
@@ -114,16 +117,11 @@ p {
 
 #profile-title {
   font-size: 35px;
-  color: 'white'; 
+  color: 'white';
 }
 
 #recipe-card {
-  background: rgba(93, 104, 89, .75);
-  color: white;
-}
-
-#recipe-card {
-  background: rgba(93, 104, 89, .75);
+  background: rgba(93, 104, 89, 0.75);
   color: white;
 }
 
@@ -131,9 +129,12 @@ p {
   color: white;
 }
 
-.recipe-card-listitem {
-  background: rgba(187, 190, 186, .65) !important;
+.recipe-card-list-item {
+  background: rgba(187, 190, 186, 0.65) !important;
   color: white !important;
+}
+.recipe-card-list-item > h3 {
+  color: white;
 }
 
 #recipe-card-title {
