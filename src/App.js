@@ -6,6 +6,10 @@ import About from './Components/About';
 import Profile from './Components/Profile';
 import Landing from './Components/Landing';
 import { Component } from 'react';
+import { withAuth0} from '@auth0/auth0-react';
+import LoginButton from './LoginButton.js';
+import LogoutButton from './LogoutButton.js';
+
 
 class App extends Component {
   render() {
@@ -18,7 +22,15 @@ class App extends Component {
               <AskChef />
             </Route>
             <Route path="/profile">
-              <Profile />
+              <>
+                <LoginButton />
+                <LogoutButton />
+                {this.props.auth0.isAuthenticated &&
+                <>
+                  <Profile />
+                </>
+                }
+              </>
             </Route>
             <Route path="/about">
               <About />
@@ -33,4 +45,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuth0(App);

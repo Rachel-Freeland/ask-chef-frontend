@@ -11,7 +11,7 @@ class RecipeCard extends Component {
 
   render() {
     return (
-      <Card id="recipe-card" className="m-3" style={{ width: '18rem' }}>
+      <Card id="recipe-card" className="m-2" style={{ width: '24rem' }}>
         <Card.Title id="recipe-card-title">{this.props.recipe.title}</Card.Title>
         <Card.Img variant="top" src={this.props.recipe.image} />
         <Card.Body>
@@ -28,11 +28,11 @@ class RecipeCard extends Component {
           </ListGroupItem>
           <ListGroupItem className="recipe-card-list-item">
             <h3>Instructions:</h3>
-            {/* <ol>
+            <ol>
               {this.props.recipe.steps.map((step) => {
                 return <li>{step}</li>;
               })}
-            </ol> */}
+            </ol>
           </ListGroupItem>
         </ListGroup>
         {this.props.isProfileCard ? (

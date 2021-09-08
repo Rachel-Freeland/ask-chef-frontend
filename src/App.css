@@ -127,10 +127,13 @@ p {
 
 #recipe-card-steps {
   color: white;
+  
 }
 
 .recipe-card-list-item {
   background: rgba(187, 190, 186, 0.65) !important;
+  max-height: 20rem;
+  overflow: scroll;
   color: white !important;
 }
 .recipe-card-list-item > h3 {

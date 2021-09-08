@@ -18,9 +18,10 @@ export default class AskChef extends Component {
 
     try {
       const results = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/recipes?ingredients=${e.target.ingredient.value}`);
-      console.log(results.data);
+      // console.log(results.data);
 
       this.setState({recipes: results.data});
+      console.log(this.state.recipes);
     } catch(err) {
       console.log(err);
       this.setState({results: []});
