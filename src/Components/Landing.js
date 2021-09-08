@@ -21,7 +21,7 @@ export default class Landing extends Component {
       );
       const landingRecipes = results.data.recipes;
       this.setState({ landingRecipes });
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   };

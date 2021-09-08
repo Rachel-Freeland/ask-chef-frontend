@@ -2,15 +2,42 @@ import React, { Component } from 'react';
 import ProfileCard from './ProfileCard';
 // import RecipeRow from './RecipeRow';
 import Container from 'react-bootstrap/Container';
+import axios from 'axois';
+
+const server = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 class Profile extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      recipes: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      recipes: [],
     };
   }
+
+  getConfig = async () => {
+    const { getIdTokenClaims } = this.props.auth0;
+    let tokenClaims = await getIdTokenClaims();
+    const jwt = tokenClaims.__raw;
+
+    const config = {
+      headers: { "Authorization": `Bearer ${jwt}` }
+    };
+    return config;
+  }
+
+  async componentDidMount() {
+    let recipeUrl = `${server}/recipes/db`;
+    let config = await this.getConfig();
+    try {
+      const response = await axios.get(recipeUrl, config);
+      this.setState({ recipes: response.data });
+      console.log(response.data);
+    } catch (err) {
+      console.log(err + "Error Message Here");
+    }
+  }
+
   render() {
     return (
       <div>
