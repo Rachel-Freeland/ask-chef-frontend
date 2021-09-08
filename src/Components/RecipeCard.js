@@ -43,13 +43,13 @@ class RecipeCard extends Component {
             <Button variant="danger">Delete</Button>
           </Card.Body>
         ) : (
-            <Card.Body id="recipe-card-body">
-              {/* Add saved check */}
-              <Button className="m-2" variant="success">
-                Save
+          <Card.Body id="recipe-card-body">
+            {/* Add saved check */}
+            <Button className="m-2" variant="success">
+              Save
             </Button>
-            </Card.Body>
-          )}
+          </Card.Body>
+        )}
       </Card>
     );
   }

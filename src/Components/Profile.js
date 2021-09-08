@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import ProfileCard from './ProfileCard';
 // import RecipeRow from './RecipeRow';
 import Container from 'react-bootstrap/Container';
-import axios from 'axois';
+import axios from 'axios';
 
-const server = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+const server = process.env.REACT_APP_BACKEND_URL;
 
 class Profile extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Profile extends Component {
     const jwt = tokenClaims.__raw;
 
     const config = {
-      headers: { "Authorization": `Bearer ${jwt}` }
+      headers: { Authorization: `Bearer ${jwt}` }
     };
     return config;
   }
@@ -34,7 +34,7 @@ class Profile extends Component {
       this.setState({ recipes: response.data });
       console.log(response.data);
     } catch (err) {
-      console.log(err + "Error Message Here");
+      console.log(err);
     }
   }
 

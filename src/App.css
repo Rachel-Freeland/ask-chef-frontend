@@ -106,6 +106,11 @@ p {
   /* margin-left: 88px; */
 }
 
+#logo-img {
+  height: 10vh;
+  min-height: 100px;
+}
+
 #askchef-card,
 #profile-card {
   background: rgba(187, 190, 186, 0.65);
