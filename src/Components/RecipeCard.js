@@ -21,7 +21,16 @@ class RecipeCard extends Component {
     return config;
   }
 
-  onClick = async () => {
+  onDeleteClick = async () => {
+    try {
+      const deletedRecipe = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/recipes/${this.props.recipe._id}`);
+      this.props.onDelete();
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  onAddClick = async () => {
     let config = await this.getConfig();
 
     try {
@@ -63,12 +72,12 @@ class RecipeCard extends Component {
             <Button className="m-2" variant="success">
               Update
             </Button>
-            <Button variant="danger">Delete</Button>
+            <Button onClick={this.onDeleteClick} variant="danger">Delete</Button>
           </Card.Body>
         ) : (
           <Card.Body id="recipe-card-body">
             {/* Add saved check */}
-            <Button onClick={this.onClick} className="m-2" variant="success">
+            <Button onClick={this.onAddClick} className="m-2" variant="success">
               Save
             </Button>
           </Card.Body>

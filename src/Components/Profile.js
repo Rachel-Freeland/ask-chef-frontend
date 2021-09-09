@@ -24,15 +24,11 @@ class Profile extends Component {
     return config;
   }
 
-  async componentDidMount() {
-    let config = await this.getConfig();
-
-    const userRecipes = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/recipes/db`, config);
-    this.setState({ recipes: userRecipes.data });
-    console.log(this.state.recipes);
+  componentDidMount() {
+    this.updatePage();
   }
 
-  getConfig = async () => {
+  updatePage = async () => {
     const { getIdTokenClaims } = this.props.auth0;
     let tokenClaims = await getIdTokenClaims();
     const jwt = tokenClaims.__raw;
@@ -40,7 +36,10 @@ class Profile extends Component {
     const config = {
       headers: { Authorization: `Bearer ${jwt}` }
     };
-    return config;
+
+    const userRecipes = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/recipes/db`, config);
+    this.setState({ recipes: userRecipes.data });
+    console.log(this.state.recipes);
   }
 
   render() {
@@ -51,7 +50,7 @@ class Profile extends Component {
           {this.state.recipes.map((recipe, index) => {
             if(index % 3 === 0) {
               return (
-                <RecipeRow isProfileCardRow={true} key={index} recipes={this.state.recipes.slice(index, index + 3)} />
+                <RecipeRow onDelete={this.updatePage} isProfileCardRow={true} key={index} recipes={this.state.recipes.slice(index, index + 3)} />
               );
             }
             else return null;

@@ -8,7 +8,11 @@ const RecipeRow = (props) => {
       {props.recipes.map((recipe) => {
         return (
           <Col key={recipe.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <RecipeCard isProfileCard={props.isProfileCardRow} recipe={recipe} />
+            <RecipeCard
+              onDelete={props.onDelete}
+              isProfileCard={props.isProfileCardRow}
+              recipe={recipe}
+            />
           </Col>
         );
       })}
