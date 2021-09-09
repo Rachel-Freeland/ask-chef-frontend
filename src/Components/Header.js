@@ -41,7 +41,7 @@ class Header extends Component {
             )}
             <NavItem>
               <Link to="/about" className="nav-link">
-                About
+                About Us
               </Link>
             </NavItem>
             <NavItem>{this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}</NavItem>
