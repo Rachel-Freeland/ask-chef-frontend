@@ -6,31 +6,46 @@ import About from './Components/About';
 import Profile from './Components/Profile';
 import Landing from './Components/Landing';
 import { Component } from 'react';
+import { withAuth0 } from '@auth0/auth0-react';
+import IsLoadingAndError from './IsLoadingAndError';
 
 class App extends Component {
   render() {
+    const { isAuthenticated } = this.props.auth0;
     return (
       <div className="App">
         <Router>
-          <Header />
-          <Switch>
-            <Route path="/askchef">
-              <AskChef />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Landing />
-            </Route>
-          </Switch>
+          <IsLoadingAndError>
+            <Header />
+            <Switch>
+              {isAuthenticated && (
+                <>
+                  <Route exact path="/">
+                    <Landing />
+                  </Route>
+                  <Route exact path="/askchef">
+                    <AskChef />
+                  </Route>
+                  <Route exact path="/profile">
+                    <Profile />
+                  </Route>
+                  <Route exact path="/about">
+                    <About />
+                  </Route>
+                </>
+              )}
+              <Route exact path="/">
+                <Landing />
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+            </Switch>
+          </IsLoadingAndError>
         </Router>
       </div>
     );
   }
 }
 
-export default App;
+export default withAuth0(App);

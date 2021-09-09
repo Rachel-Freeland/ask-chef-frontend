@@ -4,16 +4,14 @@ import RecipeCard from './RecipeCard';
 
 const RecipeRow = (props) => {
   return (
-    <Row style={{justifyContent: 'center'}}>
-      <Col style={{display: 'flex', justifyContent: 'center'}}>
-        {props.recipes[0] && <RecipeCard isProfileCard={props.isProfileCardRow} recipe={props.recipes[0]} />}
-      </Col>
-      <Col style={{display: 'flex', justifyContent: 'center'}}>
-        {props.recipes[1] && <RecipeCard isProfileCard={props.isProfileCardRow} recipe={props.recipes[1]} />}
-      </Col>
-      <Col style={{display: 'flex', justifyContent: 'center'}}>
-        {props.recipes[2] && <RecipeCard isProfileCard={props.isProfileCardRow} recipe={props.recipes[2]} />}
-      </Col>
+    <Row style={{ justifyContent: 'center' }}>
+      {props.recipes.map((recipe) => {
+        return (
+          <Col key={recipe.id} style={{ display: 'flex', justifyContent: 'center' }}>
+            <RecipeCard updatePage={props.updatePage} isProfileCard={props.isProfileCardRow} recipe={recipe} />
+          </Col>
+        );
+      })}
     </Row>
   );
 };
