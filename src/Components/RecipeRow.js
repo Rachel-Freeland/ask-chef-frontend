@@ -7,7 +7,7 @@ const RecipeRow = (props) => {
     <Row style={{ justifyContent: 'center' }}>
       {props.recipes.map((recipe) => {
         return (
-          <Col style={{ display: 'flex', justifyContent: 'center' }}>
+          <Col key={recipe.id} style={{ display: 'flex', justifyContent: 'center' }}>
             <RecipeCard isProfileCard={props.isProfileCardRow} recipe={recipe} />
           </Col>
         );

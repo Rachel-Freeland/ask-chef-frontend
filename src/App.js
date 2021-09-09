@@ -20,7 +20,6 @@ class App extends Component {
   };
   render() {
     const { user, isAuthenticated, isLoading } = this.props.auth0;
-    console.log('app', user, isLoading);
     return (
       <div className="App">
         <Router>

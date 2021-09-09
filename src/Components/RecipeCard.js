@@ -7,29 +7,30 @@ import { withAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 
 class RecipeCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { saved: false };
+  componentDidMount() {
+    console.log(this.props.recipe, 'IN CARD');
   }
 
-  componentDidMount = async () => {
-    const saveCheck = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/check?id=${this.props.recipe.id}&email=${this.props.auth0.user.email}`
-    );
-    if (saveCheck === true) {
-      this.setState({ saved: true });
-    }
-  };
+  getConfig = async () => {
+    const { getIdTokenClaims } = this.props.auth0;
+    let tokenClaims = await getIdTokenClaims();
+    const jwt = tokenClaims.__raw;
+    const config = {
+      headers: { 'Authorization': `Bearer ${jwt}` }
+    };
+    return config;
+  }
 
-  // handleSave = async (id) => {
-  //   //Fix this find
-  //   const recipe = this.state.recipes.find((recipe) => id === recipe.id);
-  //   try {
-  //     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/recipes`, recipe);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  onClick = async () => {
+    let config = await this.getConfig();
+
+    try {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/recipes`, this.props.recipe, config);
+      alert('Recipe Saved! Happy Cooking!');
+    } catch(err) {
+      console.log(err);
+    }
+  }
 
   render() {
     return (
@@ -43,16 +44,16 @@ class RecipeCard extends Component {
           <ListGroupItem className="recipe-card-list-item">
             <h3>Needed:</h3>
             <ul>
-              {this.props.recipe.missedIngredients.map((missed) => {
-                return <li>{missed.name}</li>;
+              {this.props.recipe.missedIngredients.map((missed, idx) => {
+                return <li key={idx}>{missed.name}</li>;
               })}
             </ul>
           </ListGroupItem>
           <ListGroupItem className="recipe-card-list-item">
             <h3>Instructions:</h3>
             <ol>
-              {this.props.recipe.steps.map((step) => {
-                return <li>{step}</li>;
+              {this.props.recipe.steps.map((step, idx) => {
+                return <li key={idx}>{step}</li>;
               })}
             </ol>
           </ListGroupItem>
@@ -67,15 +68,9 @@ class RecipeCard extends Component {
         ) : (
           <Card.Body id="recipe-card-body">
             {/* Add saved check */}
-            {this.state.saved ? (
-              <Button className="m-2" disabled>
-                Saved
-              </Button>
-            ) : (
-              <Button className="m-2" variant="success">
-                Save
-              </Button>
-            )}
+            <Button onClick={this.onClick} className="m-2" variant="success">
+              Save
+            </Button>
           </Card.Body>
         )}
       </Card>
