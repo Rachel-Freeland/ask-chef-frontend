@@ -87,12 +87,10 @@ export default class About extends Component {
               <h3>Alexander Beers</h3>
               <article>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue condimentum nulla sed dapibus. Sed
-                  tempor molestie velit, vitae fringilla enim elementum vel. Aliquam a mollis turpis, a iaculis odio.
-                  Morbi tempus semper purus, non blandit nunc facilisis in. Duis a felis tellus. In eget posuere risus.
-                  Phasellus sollicitudin ut leo in eleifend. Etiam nibh diam, semper nec risus at, ornare dapibus felis.
-                  Cras sapien velit, convallis in porttitor vel, consequat in est. Pellentesque est nisl, eleifend id
-                  justo non, ornare pulvinar massa. Fusce molestie eu elit eu lobortis.
+                  Hello there, I'm a graduate from San Francisco State University who obtained my Bachelor's degree in
+                  Computer Science. After some time as a Radio Frequency technician, I'm switching careers and
+                  transitioning into the tech industry to pursue my goal of becoming a web developer. When I'm not
+                  coding, I enjoy fine dining, gaming, and following local sports teams. Thank you for using our site!
                 </p>
                 <a className="about" href="https://www.linkedin.com/in/alexander-r-beers/">
                   LinkedIn
