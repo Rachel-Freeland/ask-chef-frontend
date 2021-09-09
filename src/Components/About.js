@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import antoine from '../img/antoine.png';
-import rachel from '../img/rachel.png';
-import patrick from '../img/patrick.png';
-import alex from '../img/alex.png';
+import antoine from '../img/antoine2.png';
+import rachel from '../img/rachel2.png';
+import patrick from '../img/patrick2.png';
+import alex from '../img/alex2.png';
 import blank from '../img/blank.png';
 import Container from 'react-bootstrap/Container';
 
