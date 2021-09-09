@@ -9,7 +9,7 @@ const RecipeRow = (props) => {
         return (
           <Col key={recipe.id} style={{ display: 'flex', justifyContent: 'center' }}>
             <RecipeCard
-              onDelete={props.onDelete}
+              updatePage={props.updatePage}
               isProfileCard={props.isProfileCardRow}
               recipe={recipe}
             />
