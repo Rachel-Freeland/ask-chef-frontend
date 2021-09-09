@@ -17,26 +17,26 @@ class RecipeCard extends Component {
 
   toggleModal = () => {
     this.setState({ showModal: !this.state.showModal });
-  }
+  };
 
   getConfig = async () => {
     const { getIdTokenClaims } = this.props.auth0;
     let tokenClaims = await getIdTokenClaims();
     const jwt = tokenClaims.__raw;
     const config = {
-      headers: { 'Authorization': `Bearer ${jwt}` }
+      headers: { Authorization: `Bearer ${jwt}` },
     };
     return config;
-  }
+  };
 
   onDeleteClick = async () => {
     try {
-      const deletedRecipe = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/recipes/${this.props.recipe._id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/recipes/${this.props.recipe._id}`);
       this.props.updatePage();
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   onAddClick = async () => {
     let config = await this.getConfig();
@@ -47,22 +47,23 @@ class RecipeCard extends Component {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   onUpdateClick = async (recipeToUpdate) => {
-    console.log("test");
+    console.log('test');
     console.log(recipeToUpdate);
     try {
-      const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/recipes/${recipeToUpdate._id}`,recipeToUpdate);
+      const response = await axios.put(
+        `${process.env.REACT_APP_BACKEND_URL}/recipes/${recipeToUpdate._id}`,
+        recipeToUpdate
+      );
       console.log(response.data);
       this.props.updatePage();
       this.toggleModal();
-
     } catch (err) {
-      console.log(err + "Error Message Here");
+      console.log(err + 'Error Message Here');
     }
-  }
-
+  };
 
   render() {
     return (
@@ -96,13 +97,14 @@ class RecipeCard extends Component {
               <Button onClick={this.toggleModal} className="m-2" variant="success">
                 Update
               </Button>
-              <Button onClick={this.onDeleteClick} variant="danger">Delete</Button>
+              <Button onClick={this.onDeleteClick} variant="danger">
+                Delete
+              </Button>
             </Card.Body>
           ) : (
             <Card.Body id="recipe-card-body">
-              {/* Add saved check */}
               <Button onClick={this.onAddClick} className="m-2" variant="success">
-                  Save
+                Save
               </Button>
             </Card.Body>
           )}

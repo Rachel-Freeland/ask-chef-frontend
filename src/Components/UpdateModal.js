@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 
-
-
 class UpdateModal extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
@@ -13,24 +11,20 @@ class UpdateModal extends Component {
       image: this.props.recipe.image,
       steps: e.target.steps.value.split(','),
       missedIngredientCount: this.props.recipe.missedIngredientCount,
-      missedIngredients: e.target.missedIngredients.value.split(',').map(missed => {
-        return {'name': missed};
+      missedIngredients: e.target.missedIngredients.value.split(',').map((missed) => {
+        return { name: missed };
       }),
       usedIngredients: this.props.recipe.usedIngredients,
       unusedIngredients: this.props.recipe.unusedIngredients,
       email: this.props.recipe.email,
-
     });
-
-  }
+  };
 
   render() {
     return (
       <Modal show={this.props.showModal}>
         <Modal.Header>
-          <Button onClick={this.props.toggleModal}>
-            Close
-          </Button>
+          <Button onClick={this.props.toggleModal}>Close</Button>
           <h2>Update This Recipe</h2>
         </Modal.Header>
         <Modal.Body>
@@ -45,12 +39,15 @@ class UpdateModal extends Component {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formTitle">
               <Form.Label>Enter Updated Missing Ingredients **comma separated**</Form.Label>
-              <Form.Control type="string" name="missedIngredients" defaultValue={this.props.recipe.missedIngredients.map(missed => missed.name).join(',')} />
+              <Form.Control
+                type="string"
+                name="missedIngredients"
+                defaultValue={this.props.recipe.missedIngredients.map((missed) => missed.name).join(',')}
+              />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
             </Button>
-
           </Form>
         </Modal.Body>
       </Modal>

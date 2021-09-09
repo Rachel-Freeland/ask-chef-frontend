@@ -14,7 +14,6 @@ class Header extends Component {
       <Navbar style={{ fontSize: '1.5rem' }} expand="lg">
         <Navbar.Brand className="m-2" href="#">
           <img id="logo-img" src={logo} alt="logo" />
-          {/* <span style={{ fontSize: '25px', fontWeight: 'bold' }}>IMAGE HERE</span> */}
         </Navbar.Brand>
         <Navbar.Toggle className="m-3" aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" className="justify-content-end">
@@ -24,27 +23,28 @@ class Header extends Component {
                 Home
               </Link>
             </NavItem>
-            {this.props.auth0.isAuthenticated ?
+            {this.props.auth0.isAuthenticated ? (
               <>
                 <NavItem>
-                  <Link to="/askchef" className="nav-link">Ask Chef</Link>
+                  <Link to="/askchef" className="nav-link">
+                    Ask Chef
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/profile" className="nav-link">Profile</Link>
+                  <Link to="/profile" className="nav-link">
+                    Profile
+                  </Link>
                 </NavItem>
               </>
-              : ''}
+            ) : (
+              ''
+            )}
             <NavItem>
               <Link to="/about" className="nav-link">
                 About
               </Link>
             </NavItem>
-            <NavItem>
-              {this.props.auth0.isAuthenticated
-                ? <LogoutButton />
-                : <LoginButton />
-              }
-            </NavItem>
+            <NavItem>{this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}</NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

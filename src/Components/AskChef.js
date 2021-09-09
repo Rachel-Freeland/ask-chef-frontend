@@ -21,15 +21,12 @@ class AskChef extends Component {
       const results = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}/recipes?ingredients=${e.target.ingredient.value}`
       );
-      // console.log(results.data);
-
       this.setState({ recipes: results.data });
       console.log(this.state.recipes);
     } catch (err) {
       console.log(err);
       this.setState({ results: [] });
     }
-    //temp solution for no returned results
     if (this.state.recipes.length === 0) {
       alert('No results found found the entered ingredients!');
     }

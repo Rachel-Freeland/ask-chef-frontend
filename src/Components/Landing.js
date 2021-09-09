@@ -4,7 +4,7 @@ import MissionStatement from './MissionStatement';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-// import axios from 'axios';
+import axios from 'axios';
 
 export default class Landing extends Component {
   constructor(props) {
@@ -14,17 +14,17 @@ export default class Landing extends Component {
     };
   }
 
-  // componentDidMount = async () => {
-  //   try {
-  //     const results = await axios.get(
-  //       `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}&number=5`
-  //     );
-  //     const landingRecipes = results.data.recipes;
-  //     this.setState({ landingRecipes });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  componentDidMount = async () => {
+    try {
+      const results = await axios.get(
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}&number=5`
+      );
+      const landingRecipes = results.data.recipes;
+      this.setState({ landingRecipes });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
     return (
