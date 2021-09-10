@@ -64,12 +64,13 @@ export default class About extends Component {
               <h3>Patrick Laurion</h3>
               <article>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue condimentum nulla sed dapibus. Sed
-                  tempor molestie velit, vitae fringilla enim elementum vel. Aliquam a mollis turpis, a iaculis odio.
-                  Morbi tempus semper purus, non blandit nunc facilisis in. Duis a felis tellus. In eget posuere risus.
-                  Phasellus sollicitudin ut leo in eleifend. Etiam nibh diam, semper nec risus at, ornare dapibus felis.
-                  Cras sapien velit, convallis in porttitor vel, consequat in est. Pellentesque est nisl, eleifend id
-                  justo non, ornare pulvinar massa. Fusce molestie eu elit eu lobortis.
+                  Before entering the Tech Industry, I drove commercial vehicles and served in the United States Navy as
+                  an Information Systems Technician. Serving with such a diverse group of individuals has provided a
+                  unique perspective into how teamwork and dedication brings us closer. As a Technician, everything I
+                  worked on was designed by someone else. When the expectations I set on myself exceeded the limitations
+                  of a technician, I knew I had to do something more. As a Software Engineer, I am no longer confined to
+                  someone else’s design and I am free to create unique solutions. Finally being in a field where I can
+                  tap into my full potential, there is no limit to what I can accomplish.
                 </p>
                 <a className="about" href="https://www.linkedin.com/in/patricklaurion1989/">
                   LinkedIn
