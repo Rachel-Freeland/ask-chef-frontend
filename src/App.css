@@ -13,7 +13,9 @@ body {
 #askchef-footer,
 #askchef-header,
 #profile-header,
-#profile-footer {
+#profile-footer,
+#update-modal-header,
+#update-modal-footer {
   background: rgba(93, 104, 89, 0.75);
   color: white;
 }
@@ -56,6 +58,8 @@ p {
 
 #landing-container {
   margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #mission-col {
@@ -115,9 +119,10 @@ p {
 #profile-card {
   background: rgba(187, 190, 186, 0.65);
   color: white;
-  width: 600px;
-  margin: auto;
-  margin-top: 100px;
+  width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
 }
 
 #profile-img {
@@ -155,4 +160,9 @@ p {
   text-align: center;
   margin-top: 10px;
   font-weight: 700;
+}
+
+#update-modal-body {
+  background: rgba(187, 190, 186, 0.65);
+  color: black;
 }
